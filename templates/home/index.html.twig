@@ -9,8 +9,8 @@
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Faire ses comptes est indépendant de faire un budget. Autrement dit, vous pouvez simplement commencer par tracer vos revenus et vos dépenses sans avoir de budget précis. Le plus important, dans tous les cas, c'est de commencer.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Se connecter</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">A propos</button>
+            <a href="{{ path('login') }}"><button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Se connecter</button></a>
+            <a href="{{ path('logout') }}"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Se déconnecter</button></a>
         </div>
     </div>
     <div class="overflow-hidden" style="max-height: 30vh;">
