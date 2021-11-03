@@ -19,3 +19,9 @@ main {
     overflow-x: auto;
     overflow-y: hidden;
 }
+
+.bi {
+    vertical-align: -.125em;
+    pointer-events: none;
+    fill: currentColor;
+  }
