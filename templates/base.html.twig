@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -39,7 +41,7 @@
             </symbol>
         </svg>
 
-        <main>
+        <div id="app">
             {% block sidebar %}
             <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -96,6 +98,6 @@
             </div>
             {% endblock %}
             {% block body %}{% endblock %}
-        </main>
+        </div>
     </body>
 </html>
