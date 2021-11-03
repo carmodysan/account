@@ -1,6 +1,23 @@
 {% extends 'login/base_signin.html.twig' %}
 
 {% block title %}Login{% endblock %}
+{% block head_style %}
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+  </style>
+{% endblock %}
 
 {% block body %}
     <main class="form-signin">

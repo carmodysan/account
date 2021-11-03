@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Sign-in !{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('signin') }}
@@ -11,6 +12,8 @@
             {{ encore_entry_script_tags('signin') }}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('build/images/brand/favicon.ico') }}" />
+        {% block head_style %}
+        {% endblock %}
     </head>
     <body class="text-center">
         {% block body %}{% endblock %}
