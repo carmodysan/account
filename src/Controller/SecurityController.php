@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SecurityController extends AbstractController
 {
     /**
+     * @IsGranted("ROLE_USER")
      * @Route("/logout", name="logout", methods={"GET"})
      */
     public function logout()

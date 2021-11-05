@@ -17,6 +17,15 @@
 					<v-list-item-title>{{ item.title }}</v-list-item-title>
 				</v-list-item>
 			</v-list>
+			<v-divider></v-divider>
+			<v-list>
+				<v-list-item link href="/logout">
+					<v-list-item-icon>
+						<v-icon>mdi-logout</v-icon>
+					</v-list-item-icon>
+					<v-list-item-title>Se déconnecter</v-list-item-title>
+				</v-list-item>
+			</v-list>
 		</v-menu>
 	</v-app-bar>
 </template>

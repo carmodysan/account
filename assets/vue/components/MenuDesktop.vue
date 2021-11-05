@@ -1,7 +1,7 @@
 <template>
 	<v-navigation-drawer app :permanent="!$vuetify.breakpoint.smAndDown">
 		<v-list>
-			<v-list-item>
+			<v-list-item link href="/home">
 				<v-list-item-icon>
 					<v-icon>$feicon</v-icon>
 				</v-list-item-icon>
@@ -29,6 +29,17 @@
 				<v-list-item-title>Magic</v-list-item-title>
 			</v-list-item>
 		</v-list>
+		<template v-slot:append>
+		<v-divider></v-divider>
+		<v-list>
+			<v-list-item link href="/logout">
+				<v-list-item-icon>
+					<v-icon>mdi-logout</v-icon>
+				</v-list-item-icon>
+				<v-list-item-title>Se déconnecter</v-list-item-title>
+			</v-list-item>
+		</v-list>
+		</template>
 	</v-navigation-drawer>
 </template>
 <script>
