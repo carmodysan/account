@@ -29,4 +29,17 @@ class HomeController extends AbstractController
     {
         return $this->render('home/index_auth.html.twig', []);
     }
+
+    /**
+     * Test page for authentificated user
+     * 
+     * @IsGranted("ROLE_USER")
+     * @Route("/test", name="test")
+     *
+     * @return Response
+     */
+    public function test(): Response
+    {
+        return $this->render('home/test.html.twig', []);
+    }
 }
