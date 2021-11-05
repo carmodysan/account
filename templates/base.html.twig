@@ -18,8 +18,10 @@
     <body>
         <div id="app">
             <v-app>
+                {% block menu %}
                 <menu-mobile></menu-mobile>
                 <menu-desktop></menu-desktop>
+                {% endblock %}
                 <v-main>
                     <v-container fluid>
                         {% block body %}{% endblock %}
