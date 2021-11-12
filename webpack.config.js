@@ -22,16 +22,10 @@ Encore
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
-    /*.configureDefinePlugin(options => {
-        const env = dotenv.config();
-
-        console.log(env);
-        if (env.error) {
-            throw env.error;
-        }
- 
-        options['process.env'].BASE_URL_API = JSON.stringify(env.parsed.BASE_URL_API );
-    })*/
+    .configureDefinePlugin(options => {
+        console.log(process.env.NODE_ENV)
+        options['process.env'].BASE_URL_API = JSON.stringify(process.env.BASE_URL_API );
+    })
 
     /*
      * ENTRY CONFIG
