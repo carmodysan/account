@@ -46,10 +46,16 @@ export default {
         }),
 
 		submit() {
+			console.log("Button Register clicked")
+			console.log("BASE_URL_API" + process.env.BASE_URL_API)
             this.register(this.form).then(() => {
                 console.log("finished !!!");
             })
 		},
 	},
+
+	created() {
+		console.log("BASE_URL_API" + process.env.BASE_URL_API)
+	}
 };
 </script>

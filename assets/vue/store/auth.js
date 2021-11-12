@@ -22,7 +22,7 @@ export default {
                 })
                 .catch((e) => {
                     store.commit('setLoading', false)
-                    console.log(e)
+                    console.log('Error: '+e)
                 })
         }
     },
