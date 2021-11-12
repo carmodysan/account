@@ -4,6 +4,7 @@ import Home from '../views/Home'
 import Login from '../views/Login'
 import Register from '../views/Register'
 import Dashboard from '../views/Dashboard'
+import PageNotFound from '../views/PageNotFound'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -36,6 +37,11 @@ const routes = [
             }
             next()
         }
+    },
+    {
+        path: '*',
+        name: 'pagenotfound',
+        component: PageNotFound 
     },
 ]
 
