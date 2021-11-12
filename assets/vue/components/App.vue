@@ -1,11 +1,13 @@
 <template>
 	<v-app>
-		<MenuMobile />
-		<MenuDesktop />
-        <v-overlay :value="isLoading" :absolute="absolute" z-index="10">
-			<v-progress-circular indeterminate size="64"></v-progress-circular>
-		</v-overlay>
-		<router-view />
+		<v-container fluid>
+			<MenuMobile />
+			<MenuDesktop />
+			<v-overlay :value="isLoading" :absolute="absolute" z-index="10">
+				<v-progress-circular indeterminate size="64"></v-progress-circular>
+			</v-overlay>
+			<router-view />
+		</v-container>
 	</v-app>
 </template>
 
