@@ -15,6 +15,7 @@ class AccountController extends AbstractController
     /**
      * @IsGranted("ROLE_USER")
      * @Route("/account", name="account")
+     * @Route("/{vueRouting}", requirements={"vueRouting"="^(?!api|_(profiler|wdt)).*"}, name="index")
      */
     public function index(): Response
     {

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('build/images/brand/favicon.ico') }}" />
+    </head>
+    <body>
+        <div id="app">
+            <v-app>
+                {% block menu %}
+                <menu-mobile></menu-mobile>
+                <menu-desktop></menu-desktop>
+                {% endblock %}
+                <v-main>
+                    <v-container fluid>
+                        {% block body %}{% endblock %}
+                    </v-container>
+                </v-main>
+            </v-app>
+        </div>
+    </body>
+</html>

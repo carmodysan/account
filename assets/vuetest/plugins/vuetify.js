@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-import FEIcon from '../components/icons/FEIcon'
+import FEIcon from '../components/icons/FEIcon.vue'
 
 Vue.use(Vuetify)
 

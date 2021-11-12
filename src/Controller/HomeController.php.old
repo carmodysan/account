@@ -10,12 +10,21 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class HomeController extends AbstractController
 {
     /**
+     * @Route("/", name="root")
+     * @Route("/spa/{vueRouting}", requirements={"vueRouting"="^(?!api|_(profiler|wdt)).*"}, name="index")
+     */
+    /*public function index(): Response
+    {
+        return $this->render('base.html.twig', []);
+    }*/
+
+    /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    /*public function index(): Response
     {
         return $this->render('home/index.html.twig', []);
-    }
+    }*/
 
     /**
      * Homepage for authentificated user
@@ -25,10 +34,10 @@ class HomeController extends AbstractController
      *
      * @return Response
      */
-    public function homeAuth(): Response
+    /*public function homeAuth(): Response
     {
         return $this->render('home/index_auth.html.twig', []);
-    }
+    }*/
 
     /**
      * Test page for authentificated user
@@ -38,8 +47,8 @@ class HomeController extends AbstractController
      *
      * @return Response
      */
-    public function test(): Response
+    /*public function test(): Response
     {
         return $this->render('home/test.html.twig', []);
-    }
+    }*/
 }
