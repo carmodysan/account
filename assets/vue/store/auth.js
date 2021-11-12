@@ -22,7 +22,7 @@ export default {
                 })
                 .catch((e) => {
                     store.commit('setLoading', false)
-                    console.log('Error: '+e)
+                    //TODO throw correct error console.log('Error: '+e)
                 })
         }
     },

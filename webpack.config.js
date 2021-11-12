@@ -6,11 +6,6 @@ var dotenv = require('dotenv');
 if (!Encore.isRuntimeEnvironmentConfigured()) {
 	Encore.configureRuntimeEnvironment(process.env.NODE_ENV || "dev");
 }
-var env = process.env;
-
-Object.keys(env).forEach(function (key) {
-	if (key == "NODE" || key == "APP_DEBUG" || key == "BASE_URL_API") console.log("export " + key + '="' + env[key] + '"');
-});
 
 Encore
 	// directory where compiled assets will be stored
