@@ -15,16 +15,40 @@ use Symfony\Component\Serializer\SerializerInterface;
  */
 class AuthController extends AbstractController
 {
+    private $userRepository;
+    private $serializer;
+    private $security;
+
+    public function __construct(UserRepository $userRepository, SerializerInterface $serializer, Security $security)
+    {
+        $this->userRepository = $userRepository;
+        $this->serializer = $serializer;
+        $this->security = $security;
+    }
+
     /**
      * @Route("/register", name="user.register")
      */
-    public function index(Request $request, UserRepository $userRepository, SerializerInterface $serializer, Security $security): JsonResponse
+    public function index(Request $request): JsonResponse
     {
         $jsonData = json_decode($request->getContent());
-        $user = $userRepository->create($jsonData);
+        $user = $this->userRepository->create($jsonData);
 
         return new JsonResponse([
-            'user' => $serializer->serialize($user, 'json')
-        ]);        
+            'user' => $this->serializer->serialize($user, 'json')
+        ], 201);        
+    }
+
+    /**
+     * @Route("/profile", name="user.profile")
+     */
+    public function profile(): JsonResponse
+    {
+        $currentUser = $this->security->getUser();
+        $user = $this->serializer->serialize($currentUser, 'json');
+        
+        return new JsonResponse([
+            $user
+        ], 200); 
     }
 }
