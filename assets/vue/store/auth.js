@@ -30,7 +30,7 @@ export default {
 			store.commit("setLoading", true);
 			let response = await axios.post("/login", credentials).catch((e) => {
 				store.commit("setLoading", false);
-				//TODO throw correct error
+				//TODO - Faire une page d'affichage d'erreur
 			});
 			return dispatch('attempt', response.data.token);
 		},
@@ -73,7 +73,7 @@ export default {
 				})
 				.catch((e) => {
 					store.commit("setLoading", false);
-					//TODO throw correct error console.log('Error: '+e)
+					//TODO - Faire une page d'affichage d'erreur
 				});
 		},
 	},

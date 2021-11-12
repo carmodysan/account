@@ -47,7 +47,7 @@ export default {
 
 		submit() {
             this.register(this.form).then(() => {
-                //console.log("finished !!!");
+                //TODO - Faire une redirection vers la page d'accueil
             })
 		},
 	},
