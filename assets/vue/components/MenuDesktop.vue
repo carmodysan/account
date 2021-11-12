@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer app :permanent="!$vuetify.breakpoint.smAndDown">
+    <v-navigation-drawer app v-if="!$vuetify.breakpoint.smAndDown">
 		<v-list>
 			<v-list-item link :to="{ name: 'home'}">
 				<v-list-item-icon>
