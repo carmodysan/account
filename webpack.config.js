@@ -1,6 +1,6 @@
 const Encore = require("@symfony/webpack-encore");
 var dotenv = require('dotenv');
-const { VuetifyLoaderPlugin } = require('vuetify-loader')
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
@@ -29,6 +29,8 @@ Encore
 			options["process.env"].BASE_URL_API = JSON.stringify(env.parsed.BASE_URL_API);
 		}
 	})
+
+	.enableVueLoader()
 
 	/*
 	 * ENTRY CONFIG
@@ -73,16 +75,11 @@ Encore
 		config.corejs = 3;
 	})
 
-	// enables Sass/SCSS support
-	.enableSassLoader()
-
 	// uncomment if you use TypeScript
 	//.enableTypeScriptLoader()
 
 	// uncomment if you use React
 	//.enableReactPreset()
-
-	.enableVueLoader()
 
 	// uncomment to get integrity="..." attributes on your script & link tags
 	// requires WebpackEncoreBundle 1.4 or higher
@@ -103,6 +100,10 @@ Encore
 		//pattern: /\.(png|jpg|jpeg)$/
 	})
 	
+	// enables Sass/SCSS support
+	.enableSassLoader(options => {
+		options.implementation = require('sass')
+	})
 	.addPlugin(new VuetifyLoaderPlugin());
 	
 
